@@ -1,6 +1,7 @@
 # SERVER IMAGE (Windows Server 2012 R2)
 
-Deploy a baseline image by installing Windows Server 2012 R2 with out-of-box configuration. Sysprep the machine, and use the resulting image to deploy servers in the environment.
+Deploy a baseline image by installing Windows Server 2012 R2 with out-of-box configuration. Make changes to the default configuration that you want to 
+deploy to all new servers. Sysprep the machine, and use the resulting image to deploy servers in the environment.
 
 The precise configuration of the virtual machine and of Windows Server 2012 will vary based on your environment and requirements. 
 For purposes of illustration, I will share the configuration I use for my demo environments.
@@ -49,17 +50,20 @@ There isn't really any rocket science here. Step through a standard installation
 Install any drivers and software that you want to "bake in" to your Windows Server 2012 R2 image. For example, I install VMware Tools, which is a collection of drivers and services that 
 enhance the functionality of virtual machines in VMware Workstation.
 
-## 4. Configure tweaks for the baseline image
+## 4. Configure tweaks to the baseline image
 
 If there are changes you want to make to the out-of-box configuration of Windows Server 2012 R2 for all machines that will be deployed using your image, now is the time to do so. 
 I make the following changes to the baseline image in my demo environments.
 
-Log on as Administrator. View, customize, and run the following scripts:
+### To run server image scripts
 
-- **Password-Never-Expires.ps1**: Sets the password of the current user (Administrator) to "never expires." Useful in demonstration and training environments. 
-- **Remote-Desktop-Enable.ps1**: Enables remote desktop (RDP) connections to the server.
-- **Server-Manager-Startup-Disable.ps1**: Prevents Windows' Server Manager from starting automatically at logon.
-- **IEESC-Disable.ps1**: Disables Internet Explorer Enhanced Security Configuration (IE ESC) so that it is easier to browse from the server. Useful in demonstration and training environments.
+1. Log on as Administrator to a default, out-of-box installation and configuration of Windows Server 2012 R2. 
+2. View, customize, and run the following scripts:
+
+- **Password-Never-Expires**: Sets the password of the current user (Administrator) to "never expires." Useful in demonstration and training environments. 
+- **Remote-Desktop-Enable**: Enables remote desktop (RDP) connections to the server.
+- **Server-Manager-Startup-Disable**: Prevents Windows' Server Manager from starting automatically at logon.
+- **IEESC-Disable**: Disables Internet Explorer Enhanced Security Configuration (IE ESC) so that it is easier to browse from the server. Useful in demonstration and training environments.
 
 ## 5. Run SYSPREP to prepare the machine for imaging
 
