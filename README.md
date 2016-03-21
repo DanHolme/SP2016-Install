@@ -34,6 +34,10 @@ There are SharePoint farm installation tools in the community including [AutoSPI
 
 ## Using the scripts
 
+IMPORTANT: SCRIPTS ARE PROVIDED AS SAMPLES FOR DEMONSTRATION PURPOSES ONLY. USE SCRIPTS AT YOUR OWN RISK. 
+Some scripts will not be useful in your environment. Some scripts are useful in demo environments but might not be useful or even recommended in a production environment. Use caution, get advice from your in-house experts or consultants, 
+and always validate that your scripts produce the results you desire in a test environment before running your scripts in a production environment.
+
 Scripts configure the farm in the following order:
 
 - Domain Controller
